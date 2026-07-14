@@ -12,7 +12,7 @@
 - 2026 年真正的前沿不是“一句话生成完整游戏”，而是评测从代码正确性逐步进入真实引擎、运行时观察、交互验证和可玩性。
 - GameDevBench v2 说明视觉/视频反馈会显著提升 Agent 在 Godot 中的开发能力；GameCraft-Bench 则说明最强端到端 Agent 总分仍只有 41.46%。
 - 因此最稳妥的核心判断是：**runnable 不等于 playable，playable 也不等于 complete、maintainable 或 fun。**
-- 新模型会领先于 benchmark。Fable 5 已有公开可核验的《命令与征服》iOS 移植案例，但它证明的是“人类指导下的复杂工程协作”，不能被包装成“自动从零做游戏”。
+- 新模型会领先于 benchmark。Claude Code/Fable 已有公开可核验的《命令与征服》iOS/iPadOS 移植案例，但公开材料未说明 Fable 的具体版本；这个案例证明的是“人类指导下的复杂工程协作”，不能被包装成“自动从零做游戏”。
 - 目前 frontier 已分化成三类产物：可编辑的引擎/代码工程、可导入工具的持久 3D 世界资产、以及只能持续生成画面的 neural pixel world；三者都可能看起来可交互，但“可玩性”的含义完全不同。
 - 更接近产业落地的短期方向很可能是局部生产、QA、playtesting、verification 和 balancing，而不是替代完整工作室。
 - Repo 应按证据等级组织：可复现 benchmark、受控系统、可核验 field case、独立 hands-on、官方 demo、watchlist。不要把它们混成同一张能力榜。
@@ -29,7 +29,7 @@ Six findings are especially useful for an interview:
 2. **Runnable is not playable.** The strongest end-to-end agent in GameCraft-Bench reaches only **41.46%**, even though agents often implement recognizable mechanics. Missing content, weak feedback, incoherent presentation, and broken long-horizon state remain common.
 3. **Visual and runtime feedback matter measurably.** In GameDevBench v2, adding screenshot and runtime-video feedback raises GPT-5.4 from **41.1% to 52.0%**. The bottleneck is not only coding knowledge; it is seeing and diagnosing what the engine actually produced.
 4. **The agent harness matters almost as much as the backbone.** OpenGame's templates, hook-driven implementation, and repair protocol produce large gains over direct model calls. Comparing model names without comparing tools, scaffolds, budgets, and feedback loops is therefore misleading.
-5. **Benchmarks lag frontier models, so a second evidence track is necessary.** As of the cutoff, Claude Fable 5 has no standardized game-development benchmark result that I could verify. It does have a public, inspectable Command & Conquer iOS port case. That is meaningful evidence of human-directed game engineering, but not evidence of autonomous end-to-end game creation.
+5. **Benchmarks lag frontier models, so a second evidence track is necessary.** As of the cutoff, the unspecified Claude Code/Fable version used in a public, inspectable Command & Conquer iOS/iPadOS port has no standardized game-development benchmark result that I could verify. The artifact is meaningful evidence of human-directed game engineering, but not evidence of autonomous end-to-end game creation or of a particular Fable version.
 6. **The frontier is splitting into three different artifact types.** Engine/code-native systems produce editable game projects; persistent-3D systems produce geometry or collision-bearing world assets; neural world models produce action-conditioned pixel streams. All three can look “interactive,” but their editability, testability, and meaning of playability are fundamentally different.
 
 The recommended repository should therefore be a **curated frontier evidence radar**, not a generic list of AI tools:
@@ -251,20 +251,20 @@ RuleSmith contains a particularly useful warning for industry discussion: a rule
 
 | Frontier model/system | Game-specific standardized evaluation found? | Strongest relevant public signal found | Classification | Safe conclusion |
 |---|---|---|---|---|
-| **Claude Fable 5** | **No** verified 2026 game-dev benchmark result found by the cutoff | Public Command & Conquer: Generals — Zero Hour macOS/iOS/iPadOS port repository, with an engineering log describing Fable-driven C++/build/debug work and human direction/playtesting | B/D | Strong evidence for human-directed, long-horizon game-engineering work; not autonomous game generation and not a model comparison |
+| **Claude/Fable (exact version unspecified)** | **No** verified 2026 game-dev benchmark result found by the cutoff | Public Command & Conquer: Generals — Zero Hour fork extending an existing macOS/Linux community port to iOS/iPadOS, with an engineering record describing Fable-assisted C++/build/debug work and human direction/playtesting | B | Evidence for human-directed, long-horizon game-engineering work; not autonomous game generation, a model comparison, or evidence for Fable 5 specifically |
 | **GPT-5.6 family** | No game-specific evaluation found by the cutoff | General release and coding claims only | W | Add to a model watchlist and wait for controlled game evidence |
 | **GPT-5.5** | Yes in several benchmarks; no high-quality independent field case found | Official launch page includes Dungeon/3D-game showcases without source, prompt, retries, or cost | A/C for named benchmarks; E for showcase | Cite benchmark results, not the showcase, when making a performance claim |
-| **Claude Opus 4.8** | No controlled game-development result found | Only an uncontrolled failure comparison reported by the C&C-port author | W | Insufficient evidence for comparison with Fable 5 |
+| **Claude Opus 4.8** | No controlled game-development result found | Only an uncontrolled failure comparison reported by the C&C-port author | W | Insufficient evidence for comparison with the unspecified Fable version used in the artifact |
 | **Gemini 3.5 family and Kimi K2.6** | No independently reproducible game-dev field case found in this search | Releases, benchmark appearances for some earlier/configured variants, and scattered demos | W | Do not infer game capability from general SWE results alone |
 | **Opus 4.7, GPT-5.5, GPT-5.4, Gemini 3 Pro** | Yes, in one or more 2026 game benchmarks | GameCraft-Bench, GameDevBench, WebGameBench, OpenGame-related studies | A/C | Discuss only with the exact agent harness and benchmark attached |
 
 “No evaluation found” means no sufficiently specific and inspectable evidence was found during this survey; it is not proof that no private test or unindexed post exists.
 
-### 6.2 Fable 5 case study: what it proves and what it does not
+### 6.2 Claude Code/Fable case study: what it proves and what it does not
 
-The public repository [Generals-Mac-iOS-iPad](https://github.com/ammaarreshi/Generals-Mac-iOS-iPad) is currently the strongest inspectable game-development signal found for Fable 5.
+The public repository [Generals-Mac-iOS-iPad](https://github.com/ammaarreshi/Generals-Mac-iOS-iPad) is an inspectable game-development signal for Claude Code/Fable. The repository does not identify the exact Fable version, so it must not be attributed to Fable 5 without an additional primary source.
 
-The project ports the real 2003 engine to Apple Silicon, iPhone, and iPad; adds an iOS cross-build, DirectX-to-Vulkan-to-Metal rendering path, touch controls, lifecycle handling, packaging, and engine fixes. The repository documents concrete bugs such as a black minimap and broken audio state. Its author explicitly describes the process as **human + AI collaboration**: Claude Code/Fable performed much of the C++ engineering and debugging, while the human directed the work, tested on devices, supplied perceptual observations, and owned decisions.
+The fork extends prior community macOS/Linux porting work to iOS and iPadOS. It adds iOS cross-build support, touch controls, lifecycle handling, packaging, and engine fixes. The repository documents concrete bugs such as a black minimap and broken audio state. Its author explicitly describes the process as **human + AI collaboration**: Claude Code/Fable assisted with C++ engineering and debugging, while the human directed the work, tested on devices, supplied perceptual observations, and owned decisions.
 
 Important controls on the claim:
 
@@ -278,7 +278,7 @@ Important controls on the claim:
 
 Safe interview wording:
 
-> “Fable 5 has not yet appeared in the game-specific benchmarks I could verify, but there is already a strong public field case: a human-directed iOS port of the original Command & Conquer engine with code and engineering logs. I treat that as evidence of long-horizon engineering assistance, not as proof that Fable can autonomously build a complete game.”
+> “Claude Code/Fable has not yet appeared in the game-specific benchmarks I could verify, but there is a public field case: a human-directed extension of an existing Command & Conquer macOS/Linux community port to iOS and iPadOS. The repository does not identify the exact Fable version. I treat it as evidence of long-horizon engineering assistance, not as proof that a particular Fable version can autonomously build a complete game.”
 
 ### 6.3 Two useful adjacent cases
 
@@ -483,7 +483,7 @@ These entries create a coherent and interview-ready story:
 9. Cutscene Agent
 10. RuleSmith
 11. RAID's commercial NHL 26 exploit-discovery case
-12. Fable 5 Command & Conquer iOS port field case
+12. Claude Code/Fable Command & Conquer iOS/iPadOS port field case
 13. Roblox 4D Creation and CubePart
 14. Unity AI Open Beta
 15. Unreal MCP in UE 5.8
@@ -686,7 +686,7 @@ Check:
 >
 > The most important pattern is that evaluation is moving up a ladder: code correctness, build and launch, visual usability, interaction, requirement coverage, and finally complete player experience. GameDevBench shows that screenshot and runtime-video feedback materially improve Godot development, while GameCraft-Bench shows the strongest end-to-end agent is still only at 41.46%. So runnable is clearly not the same as playable.
 >
-> I also track newer models before benchmarks catch up. For example, Fable 5 has a public Command & Conquer iOS port case with code and engineering logs, which is a strong signal for human-directed long-horizon engineering, but I would not call it proof of autonomous game creation. My current view is that the near-term opportunity is an engine-aware loop combining generation, runtime observation, targeted verification, and human playtesting—not a one-prompt replacement for a game studio.”
+> I also track newer models before benchmarks catch up. For example, an unspecified Claude Code/Fable version has a public Command & Conquer iOS/iPadOS port case with code and an engineering record. It is a useful signal for human-directed long-horizon engineering, but not proof of autonomous game creation or of Fable 5 specifically. My current view is that the near-term opportunity is an engine-aware loop combining generation, runtime observation, targeted verification, and human playtesting—not a one-prompt replacement for a game studio.”
 
 中文版本：
 
@@ -694,7 +694,7 @@ Check:
 >
 > 我目前最重要的观察是，行业的评价目标正在逐级上升：代码是否正确、项目能否构建和启动、画面是否正常、能否交互、是否满足需求，最后才是一个完整的玩家体验。GameDevBench 证明截图和运行视频反馈能明显提升 Agent 的 Godot 开发能力；GameCraft-Bench 里最强端到端 Agent 也只有 41.46%，所以 runnable 和 playable 之间仍然存在很大距离。
 >
-> 对最新模型，我会在 benchmark 之外维护 field report。例如 Fable 5 已经有一个公开的《命令与征服》iOS 移植案例，代码和工程日志都能检查。这说明它具备很强的人类指导下长程工程能力，但不能据此说它已经能自主生成完整游戏。我的判断是，短期真正有价值的是把生成、引擎运行反馈、定向验证和人工试玩组成闭环，而不是期待一个 prompt 代替整个游戏工作室。”
+> 对最新模型，我会在 benchmark 之外维护 field report。例如，Claude Code/Fable 有一个公开的《命令与征服》iOS/iPadOS 移植案例，代码和工程记录可以检查，但仓库没有说明 Fable 的具体版本。这个案例是人类指导下长程工程协作的有用信号，却不能证明 Fable 5 或任何具体版本已经能自主生成完整游戏。我的判断是，短期真正有价值的是把生成、引擎运行反馈、定向验证和人工试玩组成闭环，而不是期待一个 prompt 代替整个游戏工作室。”
 
 ### Three follow-up insights to share if asked
 
@@ -709,7 +709,7 @@ Check:
 Avoid:
 
 ```text
-Fable 5 is the best model for game development.
+A particular frontier model is the best model for game development.
 AI can now generate complete playable games.
 Project Genie is an AI game engine.
 This benchmark proves model X is better than model Y in all game tasks.
@@ -719,7 +719,7 @@ Roblox can generate full games from text.
 Prefer:
 
 ```text
-Fable 5 has a strong public game-porting case, but no standardized game benchmark result was verified.
+Claude Code/Fable has a public game-porting case, but the exact model version is unspecified and no standardized game benchmark result was verified.
 Current agents can build recognizable prototypes, while completeness and playability remain difficult.
 Project Genie is an interactive world model/product experiment, not an editable game engine.
 Within this benchmark and harness, configuration X outperformed configuration Y.
@@ -786,7 +786,7 @@ Roblox 4D Creation currently generates functional objects within constrained sch
 
 ### Field and industry evidence
 
-- [Fable-assisted Command & Conquer Apple-platform port](https://github.com/ammaarreshi/Generals-Mac-iOS-iPad)
+- [Claude Code/Fable-assisted Command & Conquer iOS/iPadOS port](https://github.com/ammaarreshi/Generals-Mac-iOS-iPad)
 - [Claude-generated NES emulator, model version unspecified](https://github.com/willtobyte/NES)
 - [World Labs Marble / World API](https://www.worldlabs.ai/blog/announcing-the-world-api)
 - [Roblox 4D Creation](https://about.roblox.com/newsroom/2026/02/accelerating-creation-powered-roblox-cube-foundation-model)
