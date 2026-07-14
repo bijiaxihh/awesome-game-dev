@@ -9,40 +9,24 @@ other entry.
 
 ## Contents
 
-- [My 2026 Takeaways](#my-2026-takeaways)
-- [Three Anchor Cases](#three-anchor-cases)
+- [2026 Frontier Snapshot](#2026-frontier-snapshot)
 - [Curated Landscape](#curated-landscape)
-- [Three Open Problems](#three-open-problems)
-- [Methodology and Evidence](#methodology-and-evidence)
 - [Adjacent Signals](#adjacent-signals)
+- [Evidence Guide](#evidence-guide)
 
-## My 2026 Takeaways
+## 2026 Frontier Snapshot
 
-**Runtime and visual feedback are becoming first-class development capabilities.** In GameDevBench v2, under the Codex harness, GPT-5.4 pass@1 increases from 41.1% to 52.0% when screenshot and runtime-video feedback are enabled.
-
-**Runnable is not equivalent to playable or complete.** The strongest completed configuration in GameCraft-Bench reaches a 41.46% overall benchmark score, with long-horizon coherence and experience quality still unresolved.
-
-**Benchmarks and frontier-model field reports provide different levels of evidence.** Benchmarks support controlled comparison; public engineering artifacts offer earlier but noisier signals.
-
-## Three Anchor Cases
-
-| Case                                                                              | What it evaluates              | Key signal                                                    | My takeaway                                               |
-| --------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------- | --------------------------------------------------------- |
-| [GameDevBench v2](https://arxiv.org/abs/2602.11103)                               | Localized Godot project edits  | GPT-5.4 pass@1 rises from 41.1% to 52.0% with visual feedback | Agents need an engine feedback loop                       |
-| [GameCraft-Bench](https://arxiv.org/abs/2606.17861)                               | Complete Godot game generation | Best completed configuration: 41.46% overall benchmark score  | Runnable remains far from complete and playable           |
-| [Fable C&C iOS/iPadOS case](https://github.com/ammaarreshi/Generals-Mac-iOS-iPad) | Human-directed porting work    | Public artifact, but no standardized benchmark                | A field case is an early signal, not a capability ranking |
-
-The Fable case extends an existing macOS/Linux community port to iOS and
-iPadOS. The linked repository says Claude Code/Fable but does not identify the
-exact Fable version; it is not evidence for Fable 5 specifically. Scores across
-the two benchmarks are also not directly comparable because their task scope,
-harness, and evaluation protocols differ.
+| Observation                           | Evidence                                                                                                                                        | Boundary                                                                      |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Runtime and visual feedback matter    | [GameDevBench v2](https://arxiv.org/abs/2602.11103): GPT-5.4 pass@1 rises from 41.1% to 52.0% with screenshot and runtime-video feedback        | Localized Godot edits under the Codex harness                                 |
+| Runnable is not playable or complete  | [GameCraft-Bench](https://arxiv.org/abs/2606.17861): best completed configuration reaches a 41.46% overall benchmark score                      | End-to-end Godot tasks; harness-, demonstration-, and judge-specific          |
+| Field reports are earlier but noisier | [Fable C&C iOS/iPadOS case](https://github.com/ammaarreshi/Generals-Mac-iOS-iPad): public engineering artifact without a standardized benchmark | Exact Fable version unspecified; human-directed extension of an existing port |
 
 ## Curated Landscape
 
 The entries below are the core evidence library: benchmarks, development
-systems, and automated testing. Together, the three anchor cases provide a
-compact cross-section of the current evidence landscape.
+systems, and automated testing. The snapshot above provides a compact
+cross-section of the current evidence landscape.
 
 ### Benchmarks and Evaluation
 
@@ -88,52 +72,6 @@ compact cross-section of the current evidence landscape.
 - [CA2](https://arxiv.org/abs/2605.13918) - Uses code-level observations and offline reinforcement learning to reach target functions in Crafter and a Godot environment. Evidence C; it depends on source profiling and offline human trajectories.
 - [RAID](https://arxiv.org/abs/2607.07498) - Uses iterative reinforcement-learning populations to discover exploit strategies in a pre-release NHL 26 scenario. Evidence C; the evidence comes from one proprietary game and still requires human interpretation.
 
-## Three Open Problems
-
-**Long-horizon project coherence.** Can an agent preserve architecture, state,
-dependencies, and design intent across many files and iterations?
-
-**Runtime and interactive verification.** Can it launch the game, observe what
-happened, exercise the relevant states, and repair failures rather than merely
-inspect code?
-
-**Mechanics versus player experience.** Correct mechanics do not guarantee
-clear feedback, coherent presentation, pacing, completeness, maintainability,
-or fun.
-
-## Methodology and Evidence
-
-Evidence grades describe verifiability, not importance or product quality.
-
-**A - Reproducible benchmark:** public tasks plus executable evaluation and
-inspectable code or results.
-
-**B - Reproducible case study:** public artifact or repository plus a meaningful
-engineering record.
-
-**C - Controlled research experiment:** defined protocol, but narrow, private,
-or substantially judge-dependent.
-
-**D - Practitioner field report:** named practitioner with concrete process
-details and preferably an artifact.
-
-**E - Official product evidence:** first-party release or demo without
-independent evaluation.
-
-**W - Watchlist:** relevant release without sufficient game-specific evidence
-yet.
-
-Each concrete claim receives one conservative grade. Results remain specific to
-the stated model, agent implementation, tools, feedback channel, budget, and
-benchmark version.
-
-```text
-valid code -> builds -> launches -> looks usable -> responds to input
-           -> satisfies requirements -> feels complete -> is maintainable and fun
-```
-
-No current benchmark covers this whole capability ladder.
-
 ## Adjacent Signals
 
 These items matter to the direction of the field but are not treated as direct
@@ -161,11 +99,20 @@ projects with explicit objects, rules, and versionable state.
 
 - [Claude-Generated NES Emulator](https://github.com/willtobyte/NES) - Provides a runnable browser artifact and a reminder that functional output still requires performance and accuracy testing. Evidence D; the exact Claude model and full process are unspecified.
 
+## Evidence Guide
+
+**A** Reproducible benchmark · **B** Reproducible case study · **C** Controlled
+experiment · **D** Field report · **E** Official product evidence · **W**
+Watchlist.
+
+Grades indicate verifiability, not importance or product quality. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for the complete criteria.
+
 ## Contributing
 
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md).
-New items should include an exact date and version, a game-specific artifact or
-evaluation, the strongest safe claim, and one meaningful caveat.
+Contributions are welcome. New items should include an exact date and version,
+a game-specific artifact or evaluation, the strongest safe claim, and one
+meaningful caveat.
 
 This project follows the [Contributor Covenant](CODE_OF_CONDUCT.md).
 
