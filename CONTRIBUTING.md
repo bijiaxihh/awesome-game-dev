@@ -32,7 +32,7 @@ Every entry should make it possible to answer:
 9. What is the strongest claim the evidence supports?
 10. What is the most important limitation?
 
-Evidence grades follow the definitions in [README.md](README.md#reading-the-evidence). Grades measure verifiability, not importance.
+Evidence grades follow the definitions in [README.md](README.md#methodology-and-evidence). Grades measure verifiability, not importance.
 
 ## Entry Format
 

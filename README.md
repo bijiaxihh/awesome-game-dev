@@ -9,17 +9,17 @@ same evidence criteria and caveats to GameCraft-Bench as to every other entry.
 
 ## My 2026 Takeaways
 
-1. **Runtime and visual feedback are becoming first-class development capabilities.** In GameDevBench v2, visual feedback raises GPT-5.4 from 41.1% to 52.0%.
-2. **Runnable is not equivalent to playable or complete.** The strongest reported end-to-end configuration in GameCraft-Bench reaches 41.46%, with long-horizon coherence and experience quality still unresolved.
+1. **Runtime and visual feedback are becoming first-class development capabilities.** In GameDevBench v2, under the Codex harness, GPT-5.4 pass@1 increases from 41.1% to 52.0% when screenshot and runtime-video feedback are enabled.
+2. **Runnable is not equivalent to playable or complete.** The strongest completed configuration in GameCraft-Bench reaches a 41.46% overall benchmark score, with long-horizon coherence and experience quality still unresolved.
 3. **Benchmarks and frontier-model field reports provide different levels of evidence.** Benchmarks support controlled comparison; public engineering artifacts offer earlier but noisier signals.
 
 ## Three Anchor Cases
 
-| Case                                                                              | What it evaluates              | Key signal                                         | My takeaway                                               |
-| --------------------------------------------------------------------------------- | ------------------------------ | -------------------------------------------------- | --------------------------------------------------------- |
-| [GameDevBench v2](https://arxiv.org/abs/2602.11103)                               | Localized Godot project edits  | Visual feedback raises GPT-5.4 from 41.1% to 52.0% | Agents need an engine feedback loop                       |
-| [GameCraft-Bench](https://arxiv.org/abs/2606.17861)                               | Complete Godot game generation | Best reported configuration reaches 41.46%         | Runnable remains far from complete and playable           |
-| [Fable C&C iOS/iPadOS case](https://github.com/ammaarreshi/Generals-Mac-iOS-iPad) | Human-directed porting work    | Public artifact, but no standardized benchmark     | A field case is an early signal, not a capability ranking |
+| Case                                                                              | What it evaluates              | Key signal                                                    | My takeaway                                               |
+| --------------------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------- | --------------------------------------------------------- |
+| [GameDevBench v2](https://arxiv.org/abs/2602.11103)                               | Localized Godot project edits  | GPT-5.4 pass@1 rises from 41.1% to 52.0% with visual feedback | Agents need an engine feedback loop                       |
+| [GameCraft-Bench](https://arxiv.org/abs/2606.17861)                               | Complete Godot game generation | Best completed configuration: 41.46% overall benchmark score  | Runnable remains far from complete and playable           |
+| [Fable C&C iOS/iPadOS case](https://github.com/ammaarreshi/Generals-Mac-iOS-iPad) | Human-directed porting work    | Public artifact, but no standardized benchmark                | A field case is an early signal, not a capability ranking |
 
 The Fable case extends an existing macOS/Linux community port to iOS and
 iPadOS. The linked repository says Claude Code/Fable but does not identify the
@@ -30,8 +30,8 @@ harness, and evaluation protocols differ.
 ## Curated Landscape
 
 The entries below are the core evidence library: benchmarks, development
-systems, and automated testing. They are useful for tracking the field, but the
-three anchor cases carry the main interview narrative.
+systems, and automated testing. Together, the three anchor cases provide a
+compact cross-section of the current evidence landscape.
 
 ### Benchmarks and Evaluation
 
