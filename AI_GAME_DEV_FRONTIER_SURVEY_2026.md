@@ -7,7 +7,7 @@
 
 ## 中文速览
 
-这份报告的正文和条目模板以英文为主，目的是让内容可以直接迁移到公开 GitHub Repo；关键结论与二面表达在这里先用中文说明：
+这份报告的正文和条目模板以英文为主，目的是让内容可以直接迁移到公开 GitHub Repo；关键结论在这里先用中文说明：
 
 - 2026 年真正的前沿不是“一句话生成完整游戏”，而是评测从代码正确性逐步进入真实引擎、运行时观察、交互验证和可玩性。
 - GameDevBench v2 说明视觉/视频反馈会显著提升 Agent 在 Godot 中的开发能力；GameCraft-Bench 则说明最强端到端 Agent 总分仍只有 41.46%。
@@ -23,7 +23,7 @@ The most defensible description of the 2026 frontier is not “AI can already ma
 
 > **AI game development is moving from code generation toward interaction-grounded software engineering, but complete and consistently playable games remain unsolved.**
 
-Six findings are especially useful for an interview:
+Six key findings emerge from the evidence:
 
 1. **The evaluation target is climbing a capability ladder.** Research is moving from code/compile checks to build health, engine runtime, visual correctness, interaction coverage, requirement satisfaction, and finally experience quality. A game can pass every earlier rung and still fail the next one.
 2. **Runnable is not playable.** The strongest end-to-end agent in GameCraft-Bench reaches only **41.46%**, even though agents often implement recognizable mechanics. Missing content, weak feedback, incoherent presentation, and broken long-horizon state remain common.
@@ -118,7 +118,7 @@ The survey's broader lesson also applies to development: stable AI-native experi
 
 ### The capability ladder
 
-Use this ladder when comparing papers or answering an interviewer:
+Use this ladder when comparing papers or systems:
 
 1. **Code validity** — Is the syntax/API usage valid?
 2. **Build health** — Does the project compile or export?
@@ -276,7 +276,7 @@ Important controls on the claim:
 - Known issues include high long-session memory use and occasional background/resume crashes.
 - The repository does not publish the full Claude session, every prompt, or exact token telemetry. Secondary estimates of cost should not be presented as measured API cost.
 
-Safe interview wording:
+Defensible wording:
 
 > “Claude Code/Fable has not yet appeared in the game-specific benchmarks I could verify, but there is a public field case: a human-directed extension of an existing Command & Conquer macOS/Linux community port to iOS and iPadOS. The repository does not identify the exact Fable version. I treat it as evidence of long-horizon engineering assistance, not as proof that a particular Fable version can autonomously build a complete game.”
 
@@ -400,7 +400,7 @@ The Godot policy is as important as positive adoption news. It adds two dimensio
 
 ---
 
-## 9. Cross-paper insights that are defensible in an interview
+## 9. Cross-paper insights and defensible conclusions
 
 ### Insight 1: the field is converging on interaction-grounded evaluation
 
@@ -470,7 +470,7 @@ This is intentionally broader than “game development agents” but narrower th
 
 ### 10.2 Tier 1: include in the first public README
 
-These entries create a coherent and interview-ready story:
+These entries create a coherent evidence narrative:
 
 1. GameDevBench v2
 2. GameCraft-Bench
@@ -680,31 +680,7 @@ Check:
 
 ---
 
-## 14. A 60–90 second interview answer
-
-> “After the first interview, I started building a 2026-focused AI game-development frontier map rather than a generic tools list. I separate evidence into reproducible benchmarks, controlled systems, developer field reports, product demos, and watchlist items.
->
-> The most important pattern is that evaluation is moving up a ladder: code correctness, build and launch, visual usability, interaction, requirement coverage, and finally complete player experience. GameDevBench shows that screenshot and runtime-video feedback materially improve Godot development, while GameCraft-Bench shows the strongest end-to-end agent is still only at 41.46%. So runnable is clearly not the same as playable.
->
-> I also track newer models before benchmarks catch up. For example, an unspecified Claude Code/Fable version has a public Command & Conquer iOS/iPadOS port case with code and an engineering record. It is a useful signal for human-directed long-horizon engineering, but not proof of autonomous game creation or of Fable 5 specifically. My current view is that the near-term opportunity is an engine-aware loop combining generation, runtime observation, targeted verification, and human playtesting—not a one-prompt replacement for a game studio.”
-
-中文版本：
-
-> “一面之后，我开始系统整理 2026 年 AI Game Development 的前沿进展，但我没有把它做成一个泛泛的工具列表，而是按可复现 benchmark、研究系统、开发者实测、产品信号和 watchlist 来区分证据。
->
-> 我目前最重要的观察是，行业的评价目标正在逐级上升：代码是否正确、项目能否构建和启动、画面是否正常、能否交互、是否满足需求，最后才是一个完整的玩家体验。GameDevBench 证明截图和运行视频反馈能明显提升 Agent 的 Godot 开发能力；GameCraft-Bench 里最强端到端 Agent 也只有 41.46%，所以 runnable 和 playable 之间仍然存在很大距离。
->
-> 对最新模型，我会在 benchmark 之外维护 field report。例如，Claude Code/Fable 有一个公开的《命令与征服》iOS/iPadOS 移植案例，代码和工程记录可以检查，但仓库没有说明 Fable 的具体版本。这个案例是人类指导下长程工程协作的有用信号，却不能证明 Fable 5 或任何具体版本已经能自主生成完整游戏。我的判断是，短期真正有价值的是把生成、引擎运行反馈、定向验证和人工试玩组成闭环，而不是期待一个 prompt 代替整个游戏工作室。”
-
-### Three follow-up insights to share if asked
-
-- “The unit being evaluated should be the deployed agent system, not the base model, because tools, visual feedback, scaffolds, and retry budgets change results substantially.”
-- “The best automated evaluator will probably combine state-directed mechanical tests with natural GUI play and selective human review.”
-- “World models are an important adjacent frontier, but today they generate responsive pixels rather than editable, versionable game projects.”
-
----
-
-## 15. Risks and wording discipline
+## 14. Risks and wording discipline
 
 Avoid:
 
@@ -728,7 +704,7 @@ Roblox 4D Creation currently generates functional objects within constrained sch
 
 ---
 
-## 16. Full candidate inventory
+## 15. Full candidate inventory
 
 ### Core benchmarks and evaluation
 
@@ -807,4 +783,4 @@ The first repository does not need hundreds of entries. A better v0.1 is a small
 - which frontier models have not yet been tested;
 - and where the remaining gap between a demo, a runnable prototype, and a maintainable playable game lies.
 
-That framing is sufficiently current for an interview and sufficiently structured to become a long-term research asset.
+That framing is sufficiently current for a public survey and sufficiently structured to become a long-term research asset.

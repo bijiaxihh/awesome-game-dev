@@ -2,16 +2,28 @@
 
 > An evidence-backed map of AI systems for building, testing, and evaluating games in 2026.
 
-This repository grew out of my work as a co-author of
-[GameCraft-Bench](https://arxiv.org/abs/2606.17861) and my effort to
-systematically understand the 2026 AI game-development frontier. I apply the
-same evidence criteria and caveats to GameCraft-Bench as to every other entry.
+This repository grew out of my work as a co-author of GameCraft-Bench and my
+effort to systematically understand the 2026 AI game-development frontier. I
+apply the same evidence criteria and caveats to GameCraft-Bench as to every
+other entry.
+
+## Contents
+
+- [My 2026 Takeaways](#my-2026-takeaways)
+- [Three Anchor Cases](#three-anchor-cases)
+- [Curated Landscape](#curated-landscape)
+- [Three Open Problems](#three-open-problems)
+- [Methodology and Evidence](#methodology-and-evidence)
+- [Adjacent Signals](#adjacent-signals)
+- [Full Survey](#full-survey)
 
 ## My 2026 Takeaways
 
-1. **Runtime and visual feedback are becoming first-class development capabilities.** In GameDevBench v2, under the Codex harness, GPT-5.4 pass@1 increases from 41.1% to 52.0% when screenshot and runtime-video feedback are enabled.
-2. **Runnable is not equivalent to playable or complete.** The strongest completed configuration in GameCraft-Bench reaches a 41.46% overall benchmark score, with long-horizon coherence and experience quality still unresolved.
-3. **Benchmarks and frontier-model field reports provide different levels of evidence.** Benchmarks support controlled comparison; public engineering artifacts offer earlier but noisier signals.
+**Runtime and visual feedback are becoming first-class development capabilities.** In GameDevBench v2, under the Codex harness, GPT-5.4 pass@1 increases from 41.1% to 52.0% when screenshot and runtime-video feedback are enabled.
+
+**Runnable is not equivalent to playable or complete.** The strongest completed configuration in GameCraft-Bench reaches a 41.46% overall benchmark score, with long-horizon coherence and experience quality still unresolved.
+
+**Benchmarks and frontier-model field reports provide different levels of evidence.** Benchmarks support controlled comparison; public engineering artifacts offer earlier but noisier signals.
 
 ## Three Anchor Cases
 
