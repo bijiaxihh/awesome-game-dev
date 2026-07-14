@@ -15,7 +15,6 @@ other entry.
 - [Three Open Problems](#three-open-problems)
 - [Methodology and Evidence](#methodology-and-evidence)
 - [Adjacent Signals](#adjacent-signals)
-- [Full Survey](#full-survey)
 
 ## My 2026 Takeaways
 
@@ -161,12 +160,6 @@ projects with explicit objects, rules, and versionable state.
 ### Adjacent Engineering Case
 
 - [Claude-Generated NES Emulator](https://github.com/willtobyte/NES) - Provides a runnable browser artifact and a reminder that functional output still requires performance and accuracy testing. Evidence D; the exact Claude model and full process are unspecified.
-
-## Full Survey
-
-The [AI Game Development Frontier Survey 2026](AI_GAME_DEV_FRONTIER_SURVEY_2026.md)
-contains the full methodology, benchmark comparisons, model-evidence notes,
-world-model taxonomy, industry analysis, and candidate inventory.
 
 ## Contributing
 
