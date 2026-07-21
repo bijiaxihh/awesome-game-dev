@@ -1,100 +1,137 @@
 # Contributing
 
-Thank you for helping improve Awesome AI Game Dev. The repository is intentionally curated: a smaller list with clear evidence and caveats is more useful than an exhaustive directory.
+Thank you for helping improve Awesome AI Game Dev. This repository is a
+curation, not a comprehensive directory: a smaller list with clear evidence
+and boundaries is more useful than an exhaustive collection.
 
 By participating, you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## What Belongs Here
+## Decide Where an Item Belongs
 
-A proposed entry should be specifically relevant to building, editing, testing, evaluating, or materially supporting the production of games. Strong candidates include:
+```text
+Does it directly build, edit, test, verify, repair, or train agents for games?
+├── Yes → Core candidate
+└── No
+    ├── Does it materially affect game-development research or workflows?
+    │   └── Yes → Frontier & Adjacent candidate
+    └── No → Out of scope
+```
 
-- Reproducible game-development benchmarks.
-- Engine-aware agents and inspectable generation systems.
-- Automated playtesting, QA, verification, or balancing systems.
-- Public field reports with an artifact and concrete engineering details.
-- Engine or industry releases that materially change agent workflows.
-- Interactive world models when clearly labeled as adjacent work.
+Core candidates belong in one of these categories:
 
-Generic coding-model releases, uninspectable social-media demos, generic asset generators, and game-playing agents with no development or testing role are out of scope.
+- **Build & Edit Games** — creates or modifies game artifacts, projects,
+  scenes, UI, cutscenes, or production-ready assets.
+- **Test, Verify & Improve** — validates runtime behavior, playtests, finds
+  bugs, repairs failures, balances rules, or discovers exploits.
+- **Agents, Harnesses & Training** — provides execution harnesses, engine tool
+  interfaces, feedback loops, data pipelines, or game-specific training.
+- **Frontier & Adjacent Signals** — tracks official cases, field reports,
+  world models, game-playing systems, products, governance, and industry
+  evidence that may influence game-development research.
 
-## Evidence Requirements
+Generic coding-model releases, uninspectable social-media demos, generic asset
+generators, and game-playing agents without a clear development or testing
+connection are out of scope.
 
-Every entry should make it possible to answer:
+An item appears in one primary category only. Express its other properties with
+two or three labels. Do not create a new category for fewer than three strong
+candidates; a durable category should normally contain about five items.
 
-1. What exact version and date are being discussed?
-2. Which engine or runtime is used?
-3. Is the task an edit, feature, project, complete game, or generated world?
-4. Is the output editable and inspectable?
-5. Does it build, run, and accept interaction?
-6. How is correctness or playability measured?
-7. What code, data, artifact, demo, or process record is public?
-8. What human intervention, time, and model budget were required?
-9. What is the strongest claim the evidence supports?
-10. What is the most important limitation?
+## Minimum Evidence
 
-Evidence grades follow the definitions in [README.md](README.md#evidence-guide). Grades measure verifiability, not importance.
+Every main-list entry must meet all of these conditions:
+
+1. An accessible primary source identifies the work.
+2. Its exact title and relevant date or version are known.
+3. Its connection to game development is direct and explainable.
+4. The task, artifact, engine, or runtime is clear.
+5. The description states only the strongest claim supported by the source.
+6. Paper, code, data, project, and demo links are included when public.
+7. Links have been opened and checked.
+8. The entry does not duplicate an existing item.
+9. Official cases, field reports, world models, and incomplete releases include
+   a short boundary statement.
+10. Work without public code or data is not described as reproducible.
+
+Items that are relevant but fail one or more conditions should go to
+[WATCHLIST.md](WATCHLIST.md), with the missing evidence and last-checked date.
+
+## Labels and Links
+
+Use direct, readable labels instead of an evidence score. Common labels include:
+
+- Work type: `Benchmark`, `System`, `Dataset`, `Training`, `Official Case`,
+  `Field Report`, `Survey`.
+- Environment: `Godot`, `Unity`, `UE5`, `Browser`, `Three.js`.
+- Function: `Generation`, `Editing`, `Verification`, `Playtesting`, `Repair`,
+  `MCP`, `World Model`.
+
+Prefer no more than three labels per entry.
+
+The item name should link to the best primary resource in this order:
+
+1. public source repository;
+2. official project page;
+3. paper;
+4. official product or model announcement.
+
+Add other resources after the description as `[Paper]`, `[Data]`, `[Demo]`, or
+`[Project]`. Do not duplicate the name link, and do not use secondary media as
+the primary link.
 
 ## Entry Format
 
-Use this compact format:
+Keep entries to one concise sentence plus an optional boundary:
 
 ```markdown
-- **[Project or Paper](URL)** — `YYYY-MM` `Engine` `Evidence A`
-  - Describes what the system builds or measures and the most useful result.
-  - **Caveat:** States the main limitation or comparison boundary.
+- [Name](https://example.com) — Explains what it builds, evaluates, or
+  contributes. [Paper](https://example.com) [Data](https://example.com)
+  — `Type` `Engine`
+  - *Boundary: States the main reproducibility or comparison limit.*
 ```
 
-For a practitioner report, include this information in the pull request description:
+Descriptions should answer: **What does it specifically build, test, or
+study?** A useful structure is:
+
+```text
+Verb + task + environment + evaluation or distinguishing feature.
+```
+
+Avoid promotional language such as "groundbreaking," "powerful," or
+"production-ready." Do not compare scores from incompatible benchmarks as if
+they formed a single leaderboard.
+
+## Pull Request Information
+
+Submit one conceptual item or tightly related group per pull request. The pull
+request template asks for:
 
 ```yaml
 title: ""
 date: YYYY-MM-DD
-model: "Exact model and version"
-agent_or_tool: ""
-engine_or_stack: ""
+category: "Build & Edit | Test, Verify & Improve | Agents, Harnesses & Training | Frontier & Adjacent"
+type: "Benchmark | System | Dataset | Training | Official Case | Field Report | Survey"
+engine_or_runtime: ""
 task: ""
-starting_point: "from scratch | template | existing repository | port"
-human_role: "prompting, assets, design, playtesting, code edits, etc."
-budget:
-  time: ""
-  tokens_or_cost: "unknown"
-artifacts:
-  repository: ""
-  build_or_demo: ""
-  logs_or_prompts: ""
-outcome: ""
-caveat: ""
+primary_source: ""
+paper: ""
+code: ""
+data: ""
+demo: ""
+strongest_supported_claim: ""
+main_boundary: ""
 ```
 
-## Pull Requests
+Before submitting:
 
-- Add one conceptual item or tightly related group per pull request.
-- Place the entry in the most specific existing section.
-- Use primary sources for factual claims and link public code when available.
-- Keep descriptions concise, neutral, and grammatically complete.
-- Do not infer game-development ability from general software-engineering benchmarks.
-- Do not compare scores across incompatible benchmarks as if they were one leaderboard.
-- Update the full survey only when the new evidence materially changes its analysis.
-- Confirm all new links resolve before submitting.
+- Place the entry in the most relevant existing category.
+- Use primary sources for factual claims.
+- Confirm every new link resolves.
+- Keep descriptions neutral and grammatically complete.
+- Add an entry to [UPDATES.md](UPDATES.md) when the change materially updates
+  the landscape, corrects a claim, or moves an item out of the watchlist.
+- Run or review the Markdown and link checks.
 
-Self-nominations are welcome when affiliation is disclosed and the evidence bar is met.
-
-## Wording
-
-Prefer bounded statements:
-
-```text
-Within this benchmark and harness, configuration X outperformed configuration Y.
-The artifact demonstrates human-directed repository-scale engineering.
-The product exposes an engine tool surface but has no public capability benchmark.
-```
-
-Avoid statements such as:
-
-```text
-Model X is the best model for game development.
-AI can now generate complete games.
-This demo proves the system is production-ready.
-```
-
-Maintainers may edit wording, request stronger evidence, move an item to the watchlist, or decline an entry to preserve the focus of the list.
+Self-nominations are welcome when affiliation is disclosed. Maintainers may
+edit wording, request stronger evidence, move an item to the watchlist, or
+decline an entry to preserve the list's focus.

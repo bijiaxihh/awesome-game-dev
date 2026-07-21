@@ -1,0 +1,59 @@
+name: Suggest a new entry
+description: Propose a verified work for the main list or watchlist
+title: "[New entry]: "
+labels:
+  - curation
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Exact title
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Date or version
+      placeholder: YYYY-MM-DD or an exact release version
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary source
+      description: Official repository, project page, paper, or announcement
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Suggested category
+      options:
+        - Build & Edit Games
+        - Test, Verify & Improve
+        - Agents, Harnesses & Training
+        - Frontier & Adjacent Signals
+        - Watchlist
+    validations:
+      required: true
+  - type: textarea
+    id: contribution
+    attributes:
+      label: Game-development contribution
+      description: What does it build, edit, test, verify, improve, or enable?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Public evidence
+      description: Add paper, code, data, demo, and artifact links.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Main boundary
+      description: What should readers not infer from this evidence?
+    validations:
+      required: true

@@ -1,0 +1,43 @@
+name: Report a correction
+description: Flag an inaccurate claim, broken link, attribution issue, or duplicate
+title: "[Correction]: "
+labels:
+  - correction
+body:
+  - type: input
+    id: location
+    attributes:
+      label: Entry or file
+      description: Link to the affected line when possible.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Correction type
+      options:
+        - Factual claim
+        - Broken or incorrect link
+        - Attribution
+        - Duplicate or category
+        - Wording or boundary
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Supporting primary source
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+    validations:
+      required: true

@@ -1,0 +1,38 @@
+name: Update an entry
+description: Report a new release, resource, result, or status for an existing entry
+title: "[Update]: "
+labels:
+  - curation
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Existing entry
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Primary source for the update
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Update date or version
+      placeholder: YYYY-MM-DD or an exact release version
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: What changed?
+      description: Explain which description, link, label, or boundary is now outdated.
+    validations:
+      required: true
+  - type: textarea
+    id: wording
+    attributes:
+      label: Suggested bounded wording
+    validations:
+      required: true
